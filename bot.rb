@@ -24,17 +24,27 @@ random_answers = ['luck is on our side',
 	'Sometimes the questions are complicated, and the answers are simple. -Dr. Seuss',
 	'Anyone who has never made a mistake has never tried anything new. -Albert Einstein',
 	'Life can only be understood backwards; but it must be lived forwards.-Søren Kierkegaard']
-	
-puts "Welcome I \'m chatbot VERSION 0.0.1 "
+weather_answers = [
+	'beter then yesterday .',
+	'not bad ..',
+	'weather is getting better',
+	'don \'t know .'
+]	
+puts "Welcome I \'m chatbot VERSION 0.0.3 "
 puts "type help for help menu"
 puts "type exit to quit"
 puts "have fun !"
 loop do
 	puts "type your question :"
 	quest = gets.chomp
-	p random_answers[rand(random_answers.count)]
+		if quest != ("the weather")
+			p random_answers[rand(random_answers.count)]
+		end	
 		if quest == "what is your name"
 			p "I 'm chatbot !"
+		end
+		if quest.include?("the weather")
+			p weather_answers[rand(weather_answers.count)]
 		end
 		if quest == "time"
 			time = Time.new
