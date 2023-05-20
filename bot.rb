@@ -32,15 +32,19 @@ puts "have fun !"
 loop do
 	puts "type your question :"
 	quest = gets.chomp
-	p random_answers[1+rand(random_answers.count)]
-		if quest.include?("your name")
-			p "my name is chatbot !"
+	p random_answers[rand(random_answers.count)]
+		if quest == "what is your name"
+			p "I 'm chatbot !"
 		end
-		if quest.include?("time") || quest.include?("date")
+		if quest == "time"
 			time = Time.new
 			puts "Current Time : " + time.inspect
 		end	
-		if quest.include?("help")
+		if  quest == "date"
+			time = Time.new
+			puts `cal`
+		end	
+		if quest == "help"
 			puts "type help for help menu"
 			puts "type exit to quit"
 			puts "have fun !"
